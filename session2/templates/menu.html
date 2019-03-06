@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Xin chào {{ user }}</h2>
+    <h2>Xin chao {{ user }}</h2>
     {% for i in item_list %}
-        <h4>{{i["model"]}}</h4>
-    {% endfor %}    
+        <h4>{{ i["name"] }}</h4> 
+        <a href="/food/{{loop.index0}}">Detail</a>     
+    {% endfor %}
 </body>
 </html>

@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Xin chào {{ user }}</h2>
-    {% for i in item_list %}
-        <h4>{{i["model"]}}</h4>
-    {% endfor %}    
+    <h3>Add food</h3> 
+    <form method="POST">
+        <input type="text" name="name">
+        <input type="number" name="price">
+        <button>Submit</button>
+    </form>
 </body>
 </html>

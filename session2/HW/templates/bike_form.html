@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        button{
+            background-color: blue;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+    <h3>Bike Rental Service</h3>
     <form method="POST">
-        <input type="text" name="model" > 
-        <input type="number" name="daily_fee">
-        <input type="text" name="image" >  
-        <input type="number" name="year"> 
-        <input type="button" value="Submit">
+            <h4>MODEL</h4>
+            <input type="text" placeholder="e.g EXCITER 150" name="model">
+            <h4>DAILY FEE (VND)</h4>
+            <input type="text" placeholder="e.g 47990000" name="daily_fee">
+            <h4>IMAGE</h4>
+            <input type="text" placeholder="e.g https://" name="image">
+            <h4>YEAR</h4>
+            <input type="text" placeholder="e.g 2019" name="year"><br><br>
+            <button>Submit</button>
     </form>
 </body>
 </html>

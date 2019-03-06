@@ -1,29 +1,27 @@
-from flask import Flask,render_template,request
-
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
-bikes = [
-    {
-        "model":"Honda",
-        "daily_fee": 10000,
-        "image":"https://hondaoto.com.vn/static/uploads/editor/CV1.JPG",
-        "year":2013,
-    },
-    {
-        "model":"Yamaha",
-        "daily_fee": 15000,
-        "image":"https://hondaoto.com.vn/static/uploads/editor/CV1.JPG",
-        "year":2015,
-    },
-]   
+items = [
+  {
+    "model":"WINNER 150cc",
+    "daily_fee": 45490000,
+    "image":"https://hondaxemay.com.vn/wp-content/uploads/2018/12/165x205_xe-1_165x205_acf_cropped.png",
+    "year":2019,
+  },
+  {
+    "model":"EXCITER 150",
+    "daily_fee": 47990000,
+    "image":"https://yamaha-motor.com.vn/wp/wp-content/uploads/2018/07/500x400-8.png",
+    "year":2019,
+  },
+]
 
-users = "Dung"
-@app.route("/") #ALL => List/Master
+@app.route('/')
 def menu():
-    return render_template("menu.html", item_list=bikes, user="Dung")
+    return render_template("menu.html", item_list = items, user = "DUNG")
 
-@app.route("/new_bike", methods=["GET","POST"])
-def add_food():
+@app.route("/new_bike", methods = ['GET','POST'])
+def new_bike():
     if request.method == "GET":
         return render_template("bike_form.html")
     elif request.method == "POST":
@@ -33,13 +31,13 @@ def add_food():
         i = form["image"]
         y = form["year"]
         new_item = {
-            "model":m,
-            "daily_fee":d,
-            "image":i,
-            "year":y,
+          "model":m, 
+          "daily_fee":d, 
+          "image":i, 
+          "year":y
         }
-        bikes.append(new_item)
-        return "ADD thanh cong" 
+        items.append(new_item)
+        return "DA THEM THANH CONG"  
 
 if __name__ == '__main__':
   app.run(debug=True)
